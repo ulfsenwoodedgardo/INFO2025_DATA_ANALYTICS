@@ -10,9 +10,7 @@ class DatasetCSV(Dataset):
         try:
             df = pd.read_csv(self.fuente)
             self.datos = df
-            print("CSV cargado")
             if self.validar_datos():
-                print ("Datos validados en el CSV")
-                # self.transformar_datos()
+                self.transformar_datos()
         except Exception as e:
             print(f"Error cargando CSV:{e}")
